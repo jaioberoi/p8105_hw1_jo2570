@@ -81,7 +81,7 @@ as.numeric(as.factor(pull(hw1_df, vec_logical)))*(pull(hw1_df, samp))
 #problem 2 
 
 #creating a new data frame called hw1_df2 
-
+set.seed(999)
 hw1_df2 = tibble(
   x = rnorm(500),
   y = rnorm(500),
@@ -90,10 +90,11 @@ hw1_df2 = tibble(
   vec_factor2 = as.factor(vec_logical2)
   )     
 
-
-
-
 ```
 
-
+the size of the dataframe `hw1_df2` is `r nrow(hw1_df2)` rows and `r ncol(hw1_df2)` columns
+mean of x = `r mean(pull(hw1_df2, x))`, 
+median = `r median(pull(hw1_df2, x))`, 
+standard deviation = `r sd(pull(hw1_df2, x))` 
+proportion of cases for which x + y > 1 = `r mean(pull(hw1_df2, vec_logical2))`
 
