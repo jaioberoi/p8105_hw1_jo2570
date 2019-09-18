@@ -5,16 +5,19 @@ date: "17/09/2019"
 output: github_document
 ---
 
-```{r include=FALSE}
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Run tidyverse package and create a data frame called hw1_df with 4 variables, each of a different type 
+
 ```{r}
+#run tidyverse package and create a data frame called hw1_df with 4 different types of variables 
 library(tidyverse)
 
+set.seed(9)
+
 hw1_df = tibble( 
-  samp = rnorm(8),
+  samp = rnorm(8), 
   vec_logical = samp > 0,
   vec_char = c("a", "b", "c", "d", "e", "f", "g", "h"),
   vec_factor = factor(c("newyork", "boston", "atlanta", "newyork", "boston", "atlanta", "newyork", "boston"))
@@ -40,7 +43,7 @@ mean(pull(hw1_df, vec_factor))
 
 ```
 
-```{r setup, eval = FALSE}
+```{r eval = FALSE}
 #converting vec_logical to a numeric vector 
 as.numeric(pull(hw1_df, vec_logical))
 
@@ -56,6 +59,9 @@ as.numeric(pull(hw1_df, vec_factor))
 #the factor vactor is coverted to a numeric vector with 3 numers (1, 2, 3) representing the factor levels 
 
 ```
+
+
+
 
 
 
