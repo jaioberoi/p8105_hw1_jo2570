@@ -23,7 +23,7 @@ hw1_df = tibble(
   vec_factor = factor(c("newyork", "boston", "atlanta", "newyork", "boston", "atlanta", "newyork", "boston"))
 )
 
-#attempting to take the mean od each variable in data frame hw1_df 
+#attempting to take the mean of each variable in data frame hw1_df 
 
 #mean of the random normal sample, samp: 
 mean(pull(hw1_df, samp))
@@ -77,6 +77,23 @@ as.numeric(as.factor(pull(hw1_df, vec_logical)))*(pull(hw1_df, samp))
 
 
 
+```{r}
+#problem 2 
+
+#creating a new data frame called hw1_df2 
+
+hw1_df2 = tibble(
+  x = rnorm(500),
+  y = rnorm(500),
+  vec_logical2 = x + y > 1,
+  vec_numeric = as.numeric(vec_logical2),
+  vec_factor2 = as.factor(vec_logical2)
+  )     
+
+
+
+
+```
 
 
 
